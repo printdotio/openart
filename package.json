@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "dependencies": {
     "grunt-nodemon": "~0.1.2",
-    "grunt-text-replace": "~0.3.10"
+    "grunt-text-replace": "~0.3.10",
+    "express": "~3.4.7",
+    "request": "~2.30.0"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
