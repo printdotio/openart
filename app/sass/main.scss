@@ -27,3 +27,21 @@ body {
     color: #000;
     padding: 0.2em 0;
 }
+
+.img-wrap{
+    margin:10px;
+    min-height: 250px;
+    min-width: 260px;
+    display:inline-block;
+  position:relative;
+
+  img{
+    position:absolute;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    max-height: 240px;
+    max-width: 240px;
+  }
+}
