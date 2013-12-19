@@ -2,7 +2,7 @@ angular.module('openart')
     .controller('MainCtrl',['$scope','$routeParams','BritishLibraryApi','BritishLibraryProjectionService', function ($scope,$routeParams,britishLibraryApi, bProjector) {
         console.log('in main ctrl');
         $scope.images = [];
-        $scope.page = 0;
+        $scope.page = $routeParams.page || 0;
 
         var onPageChange = function(page){
             britishLibraryApi.getPage(page)
