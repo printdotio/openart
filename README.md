@@ -13,7 +13,7 @@ You MUST add a config.json file under the `/app` dir with the following data:
 }
 ````
 
-Signing up for a flickr api key (is easy)[http://www.flickr.com/services/apps/create/apply].
+Signing up for a flickr api key [is easy](http://www.flickr.com/services/apps/create/apply).
 
 After that config.json file is present then run `npm install` and `bower install`.
 
