@@ -8,6 +8,9 @@ angular.module('openart')
                             title: d.title,
                             thumbUrl: d.url_s,
                             imageUrl:d.url_l,
+                            id: d.id,
+                            loved: false,
+                            selected: true
                         };
                     });
                 }
