@@ -1,20 +1,9 @@
 <div id="photos">
-    <div class="photo-wrap" ng-repeat="image in images" ng-hover-panel>
-        <img ng-src="{{ image.thumbUrl }}">
-        <div class="panel hide">
-            <div class="btns">
-                <button class="btn">Select</button>
-                <button class="btn">
-                    <i class="heart"></i>
-                    Love
-                </button>
-            </div>
-        </div>
-    </div>
+    <div img-tile ng-repeat="image in images" image="image"></div>
 </div>
 
-<div class="pull-left">
-    <a class="btn btn-link btn-prev" ng-href="/page/{{page-1}}"></a>
+<div class="pull-left" ng-switch on="page">
+<a class="btn btn-link btn-prev" ng-href="/page/{{page-1}}" ng-show="page > 1"></a>
 </div>
 
 <div class="pull-right">
