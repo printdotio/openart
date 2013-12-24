@@ -12,6 +12,10 @@ angular.module('openart', ['ngRoute', 'LocalStorageModule'])
                 templateUrl: '/cdn/views/main.html',
                 controller: 'MainCtrl'
             })
+            .when('/lovely', {
+                templateUrl: '/cdn/views/lovely.html',
+                controller: 'LovelyCtrl'
+            })
             .otherwise({
                 redirectTo: '/'
             });

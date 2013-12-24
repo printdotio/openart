@@ -93,6 +93,46 @@ header {
     background-position: center center;
 }
 
+.box{
+    border-top: 1px solid #EBEBEB;
+    border-bottom: 1px solid #EBEBEB;
+    margin-bottom: 1em;
+    padding: 1em;
+}
+
+.btn-default {
+  background: #D0021B;
+
+  font-family: Lato-Bold;
+  font-size: 16px;
+  color: #FFFFFF;
+  line-height: 19px;
+
+  border: 0;
+}
+
+.btn-select-all{
+    background: url(../images/icon-checkmark-grey.png) center left no-repeat;
+    padding-left: 20px;
+    padding-right: 30px;
+    width: auto;
+    border: none;
+    color: gray;
+}
+
+.btn-share{
+    background: url(../images/icon-share.png) center left no-repeat;
+    padding-left: 20px;
+    padding-right: 10px;
+    width: auto;
+    border: none;
+    color: gray;
+}
+
+.btn-select-all:hover, .btn-share:hover {
+  color: gray; 
+}
+
 footer {
     font-family: 'Lato-Light';
     border-top: 1px solid #EBEBEB;

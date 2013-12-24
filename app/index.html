@@ -20,7 +20,7 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <header class="container">
+        <header class="container" ng-controller="HeaderCtrl">
             <div class="row">
                 <div class="col-md-2">
                     <a href="/">
@@ -28,17 +28,18 @@
                     </a>
                 </div>
                 <div class="col-md-8 header__text">
-                    <h1>-Print Your Art-</h1>
-                    <h2>Select your favorite</h2>
+                    <h1 ng-bind="header.title()"></h1>
+                    <h2 ng-bind="header.subTitle()"></h2>
                 </div>
                 <div class="col-md-2">
                     <div class="pull-right">
-                        <a class="btn btn-link btn-heart"></a>
+                        <a class="btn btn-link btn-heart" href="/lovely"></a>
                         <a class="btn btn-link btn-cart"></a>
                     </div>
                 </div>
             </div>
         </header>
+
         <section ng-view class="container">
 
         </section>
@@ -81,10 +82,12 @@
 
         <script src="/cdn/scripts/services/britishlibraryapi.js"></script>
         <script src="/cdn/scripts/services/britishlibraryprojectionservice.js"></script>
-
+        <script src="/cdn/scripts/services/header.js"></script>
         <script src="/cdn/scripts/directives/imgTile.js"></script>
 
+        <script src="/cdn/scripts/controllers/headerctrl.js"></script>
         <script src="/cdn/scripts/controllers/mainctrl.js"></script>
+        <script src="/cdn/scripts/controllers/lovelyctrl.js"></script>
 
         <script src="//localhost:35729/livereload.js"></script>
 

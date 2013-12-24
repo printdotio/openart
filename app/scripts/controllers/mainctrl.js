@@ -1,6 +1,10 @@
 angular.module('openart')
-    .controller('MainCtrl',['$scope','$routeParams','BritishLibraryApi','BritishLibraryProjectionService', function ($scope,$routeParams,britishLibraryApi, bProjector) {
+    .controller('MainCtrl',['$scope','$routeParams','BritishLibraryApi','BritishLibraryProjectionService', 'Header', function ($scope,$routeParams,britishLibraryApi, bProjector, header) {
         console.log('in main ctrl');
+
+        header.title('-Print Your Art-');
+        header.subTitle('Select your favorite');
+
         $scope.images = [];
         $scope.page = parseInt($routeParams.page, 10) || 1;
 

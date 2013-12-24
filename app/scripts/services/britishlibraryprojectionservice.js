@@ -19,7 +19,9 @@ angular.module('openart')
                 var val = localStorageService.get(photo.id);
 
                 if (!val){
-                    val = {};
+                    val = {
+                        thumbUrl: photo.thumbUrl
+                    };
                 }
 
                 val[prop] = true;
@@ -52,5 +54,13 @@ angular.module('openart')
             isLoved: function(photo){
                 return this._getter(photo, 'loved');
             },
+
+            loved: function(){
+                var ids = localStorageService.keys();
+                
+                return ids.map(function(id){
+                    return localStorageService.get(id);
+                });
+            }
         };
     }]);
