@@ -1,5 +1,7 @@
-angular.module('openart', ['ngRoute'])
-    .config(function ($routeProvider) {
+angular.module('LocalStorageModule').value('prefix', 'openart');
+
+angular.module('openart', ['ngRoute', 'LocalStorageModule'])
+    .config(function ($routeProvider, $locationProvider) {
         console.log('in config');
         $routeProvider
             .when('/', {
@@ -10,8 +12,13 @@ angular.module('openart', ['ngRoute'])
                 templateUrl: '/cdn/views/main.html',
                 controller: 'MainCtrl'
             })
+            .when('/lovely', {
+                templateUrl: '/cdn/views/lovely.html',
+                controller: 'LovelyCtrl'
+            })
             .otherwise({
                 redirectTo: '/'
             });
-    });
 
+        $locationProvider.html5Mode(true);
+    });

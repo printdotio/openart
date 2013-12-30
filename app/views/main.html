@@ -1,11 +1,11 @@
-<div class="img-wrap" ng-repeat="image in images">
-    <img ng-src="{{image.thumbUrl}}" />
+<div id="photos">
+    <div img-tile ng-repeat="image in images" image="image"></div>
 </div>
 
-<div class="pull-left">
-    <a href="#" ng-href="#/page/{{page-1}}">prev</a>
+<div class="pull-left" ng-switch on="page">
+<a class="btn btn-link btn-prev" ng-href="/page/{{page-1}}" ng-show="page > 1"></a>
 </div>
 
 <div class="pull-right">
-    <a href="#" ng-href="#/page/{{page+1}}">next</a>
+    <a class="btn btn-link btn-next" ng-href="/page/{{page+1}}"></a>
 </div>
