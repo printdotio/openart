@@ -34,7 +34,7 @@
                 <div class="col-md-2">
                     <div class="pull-right">
                         <a class="btn btn-link btn-heart" href="/lovely"></a>
-                        <a class="btn btn-link btn-cart"></a>
+                        <a class="btn btn-link btn-cart" ng-click="goToCart()"></a>
                     </div>
                 </div>
             </div>
@@ -61,12 +61,16 @@
             ga('create','UA-XXXXX-X');ga('send','pageview');
         </script>
 
-        <script src="//az412349.vo.msecnd.net/widget-assets/pio.latest.js" />
+        <script src="//az412349.vo.msecnd.net/pio/pio.latest.js"></script>
         <script>
-            PIO.config({
-                // required -- api key
-                recipeId:””
-            });
+
+                PIO.config({
+                    // required -- api key
+                    recipeId:"6cfb4f30-34c7-4cf6-9490-f51925650811",
+                    // live
+                    url:"https://api.print.io/widget/"
+                });
+
         </script>
 
         <!-- js -->
@@ -83,6 +87,7 @@
         <script src="/cdn/scripts/services/britishlibraryapi.js"></script>
         <script src="/cdn/scripts/services/britishlibraryprojectionservice.js"></script>
         <script src="/cdn/scripts/services/header.js"></script>
+        <script src="/cdn/scripts/services/widgetservice.js"></script>
         <script src="/cdn/scripts/directives/imgTile.js"></script>
 
         <script src="/cdn/scripts/controllers/headerctrl.js"></script>

@@ -180,7 +180,7 @@ module.exports = function (grunt) {
             dist: {
                 files: {
                     '<%= yeoman.dist %>/cdn/styles/main.<%=pkg.version%>.css': [
-                        '.tmp/styles-autoprefixed/bootstrap.css',
+                        '.tmp/bower_components/bootstrap/dist/css/bootstrap.css',
                         '.tmp/styles-autoprefixed/main.css'
                     ]
                 }
@@ -276,6 +276,9 @@ module.exports = function (grunt) {
             ]
         },
         uglify:{
+            options:{
+                mangle:false
+            },
             tmp_to_dist:{
                 files:{
                     'dist/cdn/openart.<%=pkg.version %>.min.js':[
@@ -283,6 +286,7 @@ module.exports = function (grunt) {
                         ".tmp/bower_components/angular/angular.js",
                         ".tmp/bower_components/angular-resource/angular-resource.js",
                         ".tmp/bower_components/angular-route/angular-route.js",
+                        ".tmp/bower_components/angular-local-storage/angular-local-storage.js",
                         ".tmp/scripts/app.js",
                         ".tmp/scripts/controllers/*.js",
                         ".tmp/scripts/directives/*.js",
@@ -296,9 +300,9 @@ module.exports = function (grunt) {
                 src:['dist/index.html'],
                 overwrite:true,
                 replacements:[
-                    {from:/.*\/cdn.*/g, to:''},
+                    {from:/<link.*\/cdn.*/g, to:''},
                     {from:'helloworld', to:'bye'},
-                    {from:'<!-- main -->', to:'<link rel="stylesheet" href="/cdn/styles/main.<%=pkg.version%>.css" />'}
+                    {from:'<!-- css -->', to:'<link rel="stylesheet" href="/cdn/styles/main.<%=pkg.version%>.css" />'}
                 ]
             },
             js:{
@@ -307,7 +311,7 @@ module.exports = function (grunt) {
                 replacements:[
                     {from:/<script.*\/cdn.*/g, to:''},
                     {from:/<script.*local.*/g, to:''},
-                    {from:'<!-- main -->', to:'<script src="/cdn/hellopics.<%=pkg.version %>.min.js"></script>'}
+                    {from:'<!-- js -->', to:'<script src="/cdn/openart.<%=pkg.version %>.min.js"></script>'}
                 ]
             }
         }
@@ -326,8 +330,8 @@ module.exports = function (grunt) {
         'local',
         'copy:app_to_dist',
         'concurrent:min_css_js',
-        'replace:js',
-        'replace:css'
+        'replace:css',
+        'replace:js'
     ]);
 
     grunt.registerTask('default', [

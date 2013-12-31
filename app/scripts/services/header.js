@@ -18,6 +18,6 @@ angular.module('openart')
                 } else {
                     return _subTitle;
                 }
-            },
+            }
         };
     });

@@ -7,7 +7,7 @@ angular.module('openart')
                         return {
                             title: d.title,
                             thumbUrl: d.url_s,
-                            imageUrl:d.url_l,
+                            imageUrl:d.url_o,
                             id: d.id
                         };
                     });
@@ -19,12 +19,11 @@ angular.module('openart')
                 var val = localStorageService.get(photo.id);
 
                 if (!val){
-                    val = {
-                        thumbUrl: photo.thumbUrl
-                    };
+                    val = photo;
                 }
 
                 val[prop] = true;
+
 
                 localStorageService.set(photo.id, val);
             },
@@ -40,7 +39,7 @@ angular.module('openart')
             },
 
             select: function(photo){
-                this._setter(photo, 'selected');
+                this._setter(photo, 'loved');
             },
 
             love: function(photo){
