@@ -6,7 +6,8 @@
     "angular": "~1.2.5",
     "angular-route": "~1.2.5",
     "bootstrap": "~3.0.3",
-    "angular-local-storage": "*"
+    "angular-local-storage": "*",
+    "angular-resource": "*"
   },
   "devDependencies": {}
 }
